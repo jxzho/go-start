@@ -1,0 +1,21 @@
+# System files
+.DS_Store
+
+# Go build/test artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+coverage.out
+*.prof
+
+# Local environment files
+.env
+.env.*
+
+# IDE settings
+.idea/
+.vscode/
