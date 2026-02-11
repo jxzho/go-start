@@ -1,9 +1,7 @@
 package main
 
-import (
-	"jx.dev/starter/composite"
-)
+import "jx.dev/starter/pointers"
 
 func main() {
-	composite.Arr()
+	pointers.Ptr()
 }

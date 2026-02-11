@@ -1,8 +1,9 @@
 ---
-desc: 忘掉 while，忘掉 do-while。Go 只有 for，一种关键字打天下。
-标准版: init; condition; post (类似 C/Java)。
-While 版: 只保留 condition。
-死循环版: 什么都不写。
+定义: 忘掉 while，忘掉 do-while。Go 只有 for，一种关键字打天下。
+语法_标准版: init; condition; post (类似 C/Java)。
+语法_While 版: 只保留 condition。
+语法_死循环版: 什么都不写。
+go_by_example: https://gobyexample.com/for
 ---
 
 ```go

@@ -1,7 +1,7 @@
 ---
 定义: Go 的 Map 是 Key-Value 结构，无序。
 核心操作: Comma-ok 模式
-GoByExample: https://gobyexample.com/maps
+go_by_example: https://gobyexample.com/maps
 ---
 
 ```go
@@ -31,3 +31,7 @@ func main() {
     // 3. 删除
     delete(scores, "Bob")
 }
+
+// * 避坑指南：
+// * Nil Map Panic：var m map[string]int 只是声明了一个 nil map，直接 m["key"] = 1 会导致程序崩溃（Panic）。必须用 make 或字面量初始化。
+// * 无序性：千万不要依赖 Map 的遍历顺序，每次跑可能都不一样。

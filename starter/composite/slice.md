@@ -1,10 +1,29 @@
 ---
-注意: 修改切片会影响底层数组：如果你从大数组切出一个小切片，修改小切片的值，原数组也会变！
-区别: [
-  "数组 vs 切片定义：",
-  "[3]int -> 有数字，是数组（Array）。",
-  "[]int -> 没数字，是切片（Slice）。"
-]
+定义: 引用类型。长度动态。传参时只拷贝“切片头”（性能极高）。99% 的场景都用 Slice。
+title: "深入理解 Go Slice"
+tags: [Go, Slice, 数据结构]
+
+summary: >
+  可以把 Slice 想象成一个“窗口”，
+  透过它访问底层数组。
+
+description: "Slice 是对底层数组的一层视图（view），而不是数组本身。"
+
+structure:
+  - name: Pointer
+    meaning: "指向底层数组的起始位置"
+  - name: Length (len)
+    meaning: "窗口中当前包含的元素个数"
+  - name: Capacity (cap)
+    meaning: "从起始位置到底层数组末尾的可用容量"
+
+key_points:
+  - "Slice 本身不存储数据，只是对数组的描述"
+  - "多个 Slice 可以共享同一个底层数组"
+  - "len 表示可访问范围"
+  - "cap 表示在不扩容前的最大增长范围"
+
+go_by_example: https://gobyexample.com/slices
 ---
 
 ```go
@@ -32,3 +51,9 @@ func main() {
     
     fmt.Println(nums, sub)
 }
+
+// * 避坑指南：
+// * 修改切片会影响底层数组：如果你从大数组切出一个小切片，修改小切片的值，原数组也会变！
+// * 数组 vs 切片定义：
+// * - [3]int -> 有数字，是数组（Array）。
+// * - []int -> 没数字，是切片（Slice）。

@@ -1,6 +1,9 @@
 ---
-If 的特殊技: Init Statement
-else: Go 的 if 允许在判断条件前执行一段代码，这在处理错误时是标准范式。
+核心技巧: "If Init Statement"
+语法定义: "在判断条件前先执行语句"
+标准范式: "错误处理 (if err := fn(); err != nil)"
+作用域: "变量仅在 if 代码块内有效 (Scope Isolation)"
+go_by_example: https://gobyexample.com/if-else
 ---
 
 ```go
